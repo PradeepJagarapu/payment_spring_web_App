@@ -30,6 +30,9 @@ public class BankAccEntity {
 
     @Column(name = "is_active")
     private String isActive;
+    
+    @Column(name = "balance")
+    private String balance;
 
 	public Integer getBankAccountId() {
 		return bankAccountId;
@@ -86,6 +89,16 @@ public class BankAccEntity {
 	public void setIsActive(String isActive) {
 		this.isActive = isActive;
 	}
+
+	public String getBalance() {
+		return balance;
+	}
+
+	public void setBalance(String balance) {
+		this.balance = balance;
+	}
+	
+	
 
 }
 
