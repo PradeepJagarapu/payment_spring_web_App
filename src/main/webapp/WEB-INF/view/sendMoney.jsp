@@ -98,7 +98,6 @@
     -->
 </head>
 <body>
-<%--
     <div class="container">
         <h2>SEND MONEY</h2>
         <form action="SendMoney" method="post">
@@ -109,6 +108,7 @@
             <div class="form-group">
                 <label for="from">FROM:</label>
                 <select id="from" name="from" required>
+                <%-- 
                     <option value="" disabled selected>Select Account</option>
                     <%
                         BankAccountDAO bankDao = new BankAccountDAO();
@@ -117,6 +117,7 @@
                     %>
                     <option value="<%=bankAcc.getAccountNumber()%>"><%=bankAcc.getBankName()+":"+bankAcc.getAccountNumber()%></option>
                     <%  }   %>
+                 --%>
                 </select>
             </div>
             <div class="radio-group">
@@ -169,6 +170,5 @@
             toggleInputs();
         };
     </script>
- --%>
 </body>
 </html>

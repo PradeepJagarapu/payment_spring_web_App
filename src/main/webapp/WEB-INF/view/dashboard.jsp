@@ -67,117 +67,117 @@
         }
     </style>
     -->
-	<style>
-	body {
-		font-family: 'Arial', sans-serif;
-		margin: 0;
-		padding: 0;
-		background-color: #f0f4f8;
-		color: #333;
-	}
-	
-	.header {
-		background-color: #007bff;
-		color: white;
-		padding: 20px;
-		text-align: center;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	}
-	
-	.header button {
-		background-color: #ff4c4c;
-		color: white;
-		border: none;
-		padding: 10px 20px;
-		cursor: pointer;
-		border-radius: 5px;
-	}
-	
-	.header button:hover {
-		background-color: #d43b3b;
-	}
-	
-	.user-details, .account-info, .bank-accounts, .transactions {
-		background-color: white;
-		border-radius: 10px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		padding: 20px;
-		margin: 20px;
-	}
-	
-	.account-info {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	
-	.bank-accounts {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 15px;
-	}
-	
-	.bank-account {
-		background-color: #f8f9fa;
-		border: 1px solid #ddd;
-		border-radius: 10px;
-		padding: 15px;
-		width: calc(25% - 15px);
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	}
-	
-	.bank-account:hover {
-		background-color: #e7f3ff;
-		transform: scale(1.02);
-		transition: all 0.3s ease;
-	}
-	
-	table {
-		width: 100%;
-		border-collapse: collapse;
-		border-radius: 10px;
-		overflow: hidden;
-		margin-top: 20px;
-	}
-	
-	th, td {
-		padding: 10px;
-		text-align: center;
-		border: 1px solid #ddd;
-	}
-	
-	th {
-		background-color: #007bff;
-		color: white;
-	}
-	
-	tr:nth-child(even) {
-		background-color: #f9f9f9;
-	}
-	
-	.add-button, .edit-button {
-		background-color: #007bff;
-		color: white;
-		border: none;
-		padding: 10px 15px;
-		cursor: pointer;
-		border-radius: 5px;
-		transition: background-color 0.3s ease;
-	}
-	
-	.add-button:hover, .edit-button:hover {
-		background-color: #0056b3;
-	}
-	
-	button {
-		border-radius: 5px;
-		padding: 10px 15px;
-	}
-	
-	a {
-		text-decoration: none;
-	}
-	</style>
+<style>
+body {
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f0f4f8;
+	color: #333;
+}
+
+.header {
+	background-color: #007bff;
+	color: white;
+	padding: 20px;
+	text-align: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header button {
+	background-color: #ff4c4c;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.header button:hover {
+	background-color: #d43b3b;
+}
+
+.user-details, .account-info, .bank-accounts, .transactions {
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	margin: 20px;
+}
+
+.account-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.bank-accounts {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.bank-account {
+	background-color: #f8f9fa;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 15px;
+	width: calc(25% - 15px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bank-account:hover {
+	background-color: #e7f3ff;
+	transform: scale(1.02);
+	transition: all 0.3s ease;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+th, td {
+	padding: 10px;
+	text-align: center;
+	border: 1px solid #ddd;
+}
+
+th {
+	background-color: #007bff;
+	color: white;
+}
+
+tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+.add-button, .edit-button {
+	background-color: #007bff;
+	color: white;
+	border: none;
+	padding: 10px 15px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+.add-button:hover, .edit-button:hover {
+	background-color: #0056b3;
+}
+
+button {
+	border-radius: 5px;
+	padding: 10px 15px;
+}
+
+a {
+	text-decoration: none;
+}
+</style>
 
 </head>
 <body>
@@ -215,7 +215,7 @@
 				Wallet Balance: <77.00> <a href="addWalletBalance.jsp">[+]</a>
 			</p>
 		</div>
-		<a href="sendMoney.jsp"><button>Send Money</button></a>
+		<a href="${pageContext.request.contextPath}/send-money"><button>Send Money</button></a>
 	</div>
 
 	<!-- Bank Accounts Section -->
@@ -234,7 +234,7 @@
 				IFSC Code:<%=bankAcc.getIfscCode()%></p>
 			<p>
 				Branch:<%=bankAcc.getBranchLocation()%></p>
-			<a href="editBankAcct.jsp?acctNo=1234"><button
+			<a href="${pageContext.request.contextPath}/edit-bank-account"><button
 					class="edit-button">Edit</button></a>
 		</div>
 		<%
@@ -242,7 +242,7 @@
 		%>
 
 		<div>
-			<a href="addBankAcc.jsp"><button class="add-button">[+]</button></a>
+			<a href="${pageContext.request.contextPath}/add-bank-account"><button class="add-button">[+]</button></a>
 		</div>
 	</div>
 
@@ -275,7 +275,7 @@
 			}
 			%>
 		</table>
-		<a href="statementReq.jsp"><button>Detailed Stmt</button></a>
+		<a href="${pageContext.request.contextPath}/statement-req"><button>Detailed Stmt</button></a>
 	</div>
 </body>
 </html>

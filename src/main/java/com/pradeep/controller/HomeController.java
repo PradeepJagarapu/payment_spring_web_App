@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class LoginController {
+@RequestMapping("/")
+public class HomeController {
 	
-	@RequestMapping("/login")
-	public String doGet() {
-		System.out.println("This is login method");
+	@GetMapping("/login")
+	public String loginPage(){
 		return "login";
 		
 //		String username=request.getParameter("username");
@@ -27,5 +27,9 @@ public class LoginController {
 //		}else {
 //			response.sendRedirect("login.jsp");
 //		}
+	}
+	@PostMapping("/login")
+	public String validateUser(){
+		return "dashboard";
 	}
 }
