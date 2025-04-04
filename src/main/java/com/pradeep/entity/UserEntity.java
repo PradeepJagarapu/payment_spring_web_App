@@ -8,6 +8,7 @@ public class UserEntity {
 
     @Id
     @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
 
     @Column(name = "user_name", nullable = false)
@@ -30,8 +31,24 @@ public class UserEntity {
 
     @Column(name = "email")
     private String email;
+    
+    public UserEntity() {
+		super();
+	}
 
-    // Getters and Setters
+	public UserEntity(String userName, String password, String firstName, String lastName, String address,
+			String phoneNumber, String email) {
+		super();
+		this.userName = userName;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.address = address;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+	}
+
+	// Getters and Setters
     public int getUserId() {
         return userId;
     }

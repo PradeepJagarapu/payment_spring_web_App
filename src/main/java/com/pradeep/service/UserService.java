@@ -24,4 +24,27 @@ public class UserService {
 		Optional<UserEntity> user = userDAO.findById(userId);
 		return user.get();
 	}
+	
+	public boolean registerUser(UserEntity user){
+			
+		UserEntity savedUser= userDAO.save(user); 
+		
+		if(savedUser!=null) {
+			return true;
+		}else {
+			return false;
+		}
+		
+	}
+	
+	public UserEntity validateUser(String username,String password) {
+		Optional<UserEntity> existingUser=userDAO.findByUserNameAndPassWord(username, password);
+		
+		if(existingUser.isPresent()) {
+			return existingUser.get();
+		}else {
+			return null;
+		}
+		
+	}
 }

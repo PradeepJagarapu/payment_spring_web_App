@@ -27,7 +27,7 @@ public class UserController {
 	@Autowired
 	TransactionService txnService;
 	
-	@RequestMapping("/user")
+	@RequestMapping("/dashboard")
 	public String user(Model model) {
 		UserEntity user=userService.getUserById(1);
 		model.addAttribute("user", user);
