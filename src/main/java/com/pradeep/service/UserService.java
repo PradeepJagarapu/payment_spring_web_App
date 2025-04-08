@@ -38,7 +38,9 @@ public class UserService {
 	}
 	
 	public UserEntity validateUser(String username,String password) {
-		Optional<UserEntity> existingUser=userDAO.findByUserNameAndPassWord(username, password);
+		
+		//existingUSer - if the user exists in the db or not
+		Optional<UserEntity> existingUser=userDAO.findByUserNameAndPassword(username, password);
 		
 		if(existingUser.isPresent()) {
 			return existingUser.get();

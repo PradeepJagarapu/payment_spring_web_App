@@ -55,7 +55,7 @@
 
     <div class="form-container">
         <h1>Register</h1>
-        <form action="${pageContext.request.contextPath}/register" method="post">
+        <form action="${pageContext.request.contextPath}/register" method="post" >
             <input type="text" name="userName" placeholder="Username" required>
             <input type="text" name="firstName" placeholder="First Name" value="firstName" required>
             <input type="text" name="lastName" placeholder="Last Name" value="lastName" required>

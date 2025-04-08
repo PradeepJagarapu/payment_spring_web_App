@@ -98,6 +98,7 @@
     -->
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
     <div class="container">
         <h2>SEND MONEY</h2>
         <form action="SendMoney" method="post">

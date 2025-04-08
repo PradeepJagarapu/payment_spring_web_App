@@ -15,6 +15,8 @@ import com.pradeep.service.BankAccService;
 import com.pradeep.service.TransactionService;
 import com.pradeep.service.UserService;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class UserController {
 	
@@ -28,8 +30,9 @@ public class UserController {
 	TransactionService txnService;
 	
 	@RequestMapping("/dashboard")
-	public String user(Model model) {
-		UserEntity user=userService.getUserById(1);
+	public String user(Model model,HttpSession session) {
+		int userId=(int) session.getAttribute("userId");
+		UserEntity user=userService.getUserById(userId);
 		model.addAttribute("user", user);
 		List<BankAccEntity> userBankAccs=bankService.getBankAccByUserID(user);
 		model.addAttribute("bankAccs", userBankAccs);

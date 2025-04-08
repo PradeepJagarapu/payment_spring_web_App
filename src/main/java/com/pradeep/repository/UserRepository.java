@@ -9,5 +9,5 @@ import com.pradeep.entity.UserEntity;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Integer>{
-	public Optional<UserEntity> findByUserNameAndPassWord(String userName,String password);
+	public Optional<UserEntity> findByUserNameAndPassword(String userName,String password);
 }
