@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pradeep.dto.UserDTO;
 import com.pradeep.entity.UserEntity;
 import com.pradeep.repository.UserRepository;
 
@@ -33,6 +34,20 @@ public class UserService {
 			return true;
 		}else {
 			return false;
+		}
+		
+	}
+	public void updateUser(UserDTO userdto,int userId){
+		UserEntity existingUser = userDAO.findById(userId).get();
+		if(existingUser!=null) {
+			existingUser.setUserName(userdto.getUserName());
+			existingUser.setFirstName(userdto.getFirstName());
+			existingUser.setLastName(userdto.getLastName());
+			existingUser.setAddress(userdto.getAddress());
+			existingUser.setPhoneNumber(userdto.getPhoneNumber());
+			existingUser.setEmail(userdto.getEmail());
+			
+			UserEntity savedUser= userDAO.save(existingUser);
 		}
 		
 	}

@@ -1,19 +1,18 @@
 package com.pradeep.dto;
 
 public class UserDTO {
-    private int userId;
     private String userName;
     private String firstName;
     private String lastName;
     private String email;
+    private String address;
     private String phoneNumber;
 
     // Constructors
     public UserDTO() {
     }
 
-    public UserDTO(int userId, String userName, String firstName, String lastName, String email, String phoneNumber) {
-        this.userId = userId;
+    public UserDTO(String userName, String firstName, String lastName, String email, String phoneNumber) {
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -22,13 +21,6 @@ public class UserDTO {
     }
 
     // Getters and Setters
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
     public String getUserName() {
         return userName;
@@ -69,5 +61,15 @@ public class UserDTO {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+    
+    
 }
 

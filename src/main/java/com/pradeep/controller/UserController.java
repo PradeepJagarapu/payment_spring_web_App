@@ -6,8 +6,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.pradeep.dto.UserDTO;
 import com.pradeep.entity.BankAccEntity;
 import com.pradeep.entity.TransactionsEntity;
 import com.pradeep.entity.UserEntity;
@@ -39,6 +43,22 @@ public class UserController {
 		List<TransactionsEntity> userTxns=txnService.getTxnsByUser(user.getUserId());
 		model.addAttribute("userTxns", userTxns);
 		return "dashboard";
+	}
+	
+	@GetMapping("/edit-profile")
+	public String editProfilePage(Model model,HttpSession session) {
+		int userId=(int) session.getAttribute("userId");
+		UserEntity user=userService.getUserById(userId);
+		model.addAttribute("user", user);
+		return "editProfile";
+	}
+	
+	
+	@PostMapping("/edit-profile")
+	public String updateProfile(@ModelAttribute UserDTO userdto,Model model,HttpSession session) {
+		int userId=(int) session.getAttribute("userId");
+		userService.updateUser(userdto, userId);
+		return "redirect:/dashboard";
 	}
 	
 	

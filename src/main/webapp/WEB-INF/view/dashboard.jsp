@@ -163,6 +163,7 @@
 		<p><strong>Name:</strong><%=user.getUserName()%></p>
 		<p><strong>Email:</strong><%=user.getEmail()%></p>
 		<p><strong>Phone:</strong><%=user.getPhoneNumber()%></p>
+		<button><a href="${pageContext.request.contextPath}/edit-profile">Edit Profile</a></button>
 	</div>
 	<!-- Account Information Section -->
 	<div class="account-info">
