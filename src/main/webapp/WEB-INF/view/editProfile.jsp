@@ -56,14 +56,14 @@
 <body>
 	<%UserEntity user=(UserEntity)request.getAttribute("user");%>
     <div class="form-container">
-        <h1>Register</h1>
-        <form action="${pageContext.request.contextPath}/register" method="post" >
-            <input type="text" name="userName" placeholder="Username" value="<%user.getUserName();%>" >
-            <input type="text" name="firstName" placeholder="First Name" value="<%user.getFirstName();%>" >
-            <input type="text" name="lastName" placeholder="Last Name" value="<%user.getLastName();%>" >
-            <input type="text" name="address" placeholder="Address" value="<%user.getAddress();%>" >
-            <input type="tel" name="phoneNumber" placeholder="Phone Number" pattern="[0-9]{10}" value="<%user.getPhoneNumber();%>" >
-            <input type="email" name="email" placeholder="Email" value="<%user.getEmail();%>" required>
+        <h1>Edit Profile</h1>
+        <form action="${pageContext.request.contextPath}/edit-profile" method="post" >
+            <input type="text" name="userName" placeholder="Username" value="<%=user.getUserName()%>" >
+            <input type="text" name="firstName" placeholder="First Name" value="<%=user.getFirstName()%>" >
+            <input type="text" name="lastName" placeholder="Last Name" value="<%=user.getLastName()%>" >
+            <input type="text" name="address" placeholder="Address" value="<%=user.getAddress()%>" >
+            <input type="tel" name="phoneNumber" placeholder="Phone Number" pattern="[0-9]{10}" value="<%=user.getPhoneNumber()%>" >
+            <input type="email" name="email" placeholder="Email" value="<%=user.getEmail()%>" required>
             <button type="submit">Update</button>
         </form>
     </div>

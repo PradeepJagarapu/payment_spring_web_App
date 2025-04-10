@@ -32,7 +32,7 @@
 	<div class="header">
 		<h2>Payments Web App</h2>
 		<p>Welcome<User Full Name></p>
-		<a href="logout.jsp"><button>Logout</button></a>
+		<a href="${pageContext.request.contextPath}/logout"><button>Logout</button></a>
 	</div>
 </body>
 </html>

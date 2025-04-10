@@ -1,4 +1,4 @@
-
+<%@page import="com.pradeep.entity.BankAccEntity" %>
 <%@page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -101,24 +101,21 @@
 	<jsp:include page="header.jsp"></jsp:include>
     <div class="container">
         <h2>SEND MONEY</h2>
-        <form action="SendMoney" method="post">
+        <form action="${pageContext.request.contextPath}/send-money" method="post">
             <div class="form-group">
                 <label for="amount">AMOUNT TO SEND:</label>
                 <input type="number" id="amount" name="amount" step="0.01" required>
             </div>
             <div class="form-group">
                 <label for="from">FROM:</label>
-                <select id="from" name="from" required>
-                <%-- 
+                <select id="from" name="from" required> 
                     <option value="" disabled selected>Select Account</option>
                     <%
-                        BankAccountDAO bankDao = new BankAccountDAO();
-                        List<BankAccount> bankAccs = bankDao.getBankAccounts(1);
-                        for (BankAccount bankAcc : bankAccs) {
+                        List<BankAccEntity> bankAccs = (List<BankAccEntity>)request.getAttribute("bankAccs");
+                        for (BankAccEntity bankAcc : bankAccs) {
                     %>
                     <option value="<%=bankAcc.getAccountNumber()%>"><%=bankAcc.getBankName()+":"+bankAcc.getAccountNumber()%></option>
                     <%  }   %>
-                 --%>
                 </select>
             </div>
             <div class="radio-group">

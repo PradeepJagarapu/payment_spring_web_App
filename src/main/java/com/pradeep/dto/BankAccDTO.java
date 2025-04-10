@@ -2,21 +2,12 @@ package com.pradeep.dto;
 
 public class BankAccDTO {
 
-	private Integer bankAccountId;
 	private String accountNumber;
 	private String ifscCode;
 	private String bankName;
 	private String branchLocation;
 	private String isActive;
-	private String balance;
-
-	public Integer getBankAccountId() {
-		return bankAccountId;
-	}
-
-	public void setBankAccountId(Integer bankAccountId) {
-		this.bankAccountId = bankAccountId;
-	}
+	private double balance;
 
 	public String getAccountNumber() {
 		return accountNumber;
@@ -58,11 +49,11 @@ public class BankAccDTO {
 		this.isActive = isActive;
 	}
 
-	public String getBalance() {
+	public double getBalance() {
 		return balance;
 	}
 
-	public void setBalance(String balance) {
+	public void setBalance(double balance) {
 		this.balance = balance;
 	}
 

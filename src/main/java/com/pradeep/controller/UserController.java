@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.pradeep.dto.BankAccDTO;
 import com.pradeep.dto.UserDTO;
 import com.pradeep.entity.BankAccEntity;
 import com.pradeep.entity.TransactionsEntity;
@@ -61,6 +62,21 @@ public class UserController {
 		return "redirect:/dashboard";
 	}
 	
+	@PostMapping("/add-bank-account")
+	public String addBankAcc(@ModelAttribute BankAccDTO bankAccDTO,HttpSession session){
+		int userId=(int) session.getAttribute("userId");
+		UserEntity user=userService.getUserById(userId);
+		BankAccEntity bankAcc=new BankAccEntity();
+		bankAcc.setAccountNumber(bankAccDTO.getAccountNumber());
+		bankAcc.setBalance(bankAccDTO.getBalance());
+		bankAcc.setBankName(bankAccDTO.getBankName());
+		bankAcc.setBranchLocation(bankAccDTO.getBranchLocation());
+		bankAcc.setIfscCode(bankAccDTO.getIfscCode());
+		bankAcc.setUser(user);
+		bankAcc.setIsActive("yes");
+		bankService.addBankAccount(bankAcc);
+		return "redirect:/dashboard";
+	}
 	
 	
 //	@RequestMapping("/userbankAccs")

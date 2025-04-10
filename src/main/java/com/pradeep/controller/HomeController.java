@@ -72,6 +72,6 @@ public class HomeController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "logout";
+		return "login";
 	}
 }

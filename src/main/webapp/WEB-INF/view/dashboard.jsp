@@ -184,9 +184,9 @@
 		<div class="bank-account">
 			<p><%=bankAcc.getBankName()%></p>
 			<p>Bank Acct No:<%=bankAcc.getAccountNumber()%></p>
-			<p>Balance:<%=bankAcc.getBalance()%></p>
 			<p>IFSC Code:<%=bankAcc.getIfscCode()%></p>
 			<p>Branch:<%=bankAcc.getBranchLocation()%></p>
+			<p>Balance:<%=bankAcc.getBalance()%></p>
 			<a href="${pageContext.request.contextPath}/edit-bank-account"><button class="edit-button">Edit</button></a>
 		</div>
 		<%
